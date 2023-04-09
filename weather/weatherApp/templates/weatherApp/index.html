@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Погодное приложение</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+	body {
+   	   background: #fa8e47;
+	   color: #fff;
+   }
+   </style>
+
+</head>
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-#fff border-bottom shadow-sm">
+    <a class="mt-2 btn btn-primary" href="/">Главная</a>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-5">
+        <h1>Погода в вашем городе</h1>
+        <form action="" autocomplete="off" method="post">
+          {% csrf_token %}
+          <label for="city">Город</label>
+          {{ form.name }}
+          <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-primary">
+        </form>
+
+      </div>
+      <div class="col-5 offset-2">
+        <h1>Информация</h1>
+
+
+        {% for info in all_info %}
+        <div class="alert alert-info">
+          <div class="row">
+            <div class="col-9">
+              <b>Город:</b> {{ info.city }}<br>
+              <b>Температура:</b> {{ info.temp }}<sup>o</sup>
+            </div>
+            <div class="col-2 offset-1">
+              <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды">
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614261782_77-p-fon-chernikh-dosok-93.jpg);
+    color: white;
+}
+
+p {text-align: left;}
+
+h1 {
+    text-align: left;
+    font-size: 32px;
+}
+h2 {
+    text-align: left;
+    font-size: 32px;
+}
+
+table {
+    border: 1px solid white;
+}
+
+figure {
+    float: right;
+    width: 25%;
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    text-indent: 0;
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+
+  li {
+    color: white; /* bullet color */
+  }
+  li span {
+    color: white; /* text color */
+  }
+
+  a {
+    color: white;
+  }
